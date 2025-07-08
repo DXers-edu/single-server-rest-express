@@ -5,8 +5,8 @@ const authService = require('../services/auth.service');
 exports.signUp = async (req, res, next) => {
     try {
         const { userEmail, userPassword } = req.body;
-        await authService.signUp(userEmail, userPassword);
-        res.status(201).json({  });
+        const responseBody = await authService.signUp(userEmail, userPassword);
+        res.status(200).json(responseBody);
     } catch (error) {
         next(error);
     }
@@ -15,8 +15,8 @@ exports.signUp = async (req, res, next) => {
 exports.signIn = async (req, res, next) => {
     try {
         const { userEmail, userPassword } = req.body;
-        const { status, body } = await authService.signIn(userEmail, userPassword);
-        res.status(status).json(body);
+        const responseBody = await authService.signIn(userEmail, userPassword);
+        res.status(200).json(responseBody);
     } catch (error) {
         next(error);
     }
