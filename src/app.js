@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
 
-app.use('/api/auth', authRoutes);
+app.use('/api/v1/auth', authRoutes);
 
 app.use((req, res, next) => {
   res.status(404).json({ message: 'Not Found' });
