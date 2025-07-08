@@ -37,6 +37,7 @@ npm run start
 ---
 
 ## ⚙️ 설정 변경 (중요!)
+
 `.env` 파일
 
 ```properties
@@ -45,6 +46,25 @@ MONGO_URI=mongodb://prd_user:StrongP!ssw0rd@localhost:27017/single_server?authSo
 JWT_SECRET=qwertyuioplkjhgfdsazxcvbnm1234567890
 JWT_EXPIRES_IN=1h
 BCRYPT_SALT_ROUNDS=10
+```
+
+`ecosystem.config.js` 파일
+
+```javascript
+module.exports = {
+   apps : [{
+        name: 'single-server-rest-express',
+        script: 'node single-server-rest-express/src/server.js',
+        watch: 'single-server-rest-express',
+        env: {
+            PORT: 4000,
+            MONGO_URI: ‘mongodb://prd_user:StrongP!ssw0rd@localhost:27017/single_server?authSource=single_server’,
+            JWT_SECRET: ‘qwertyuioplkjhgfdsazxcvbnm1234567890’,
+            JWT_EXPIRES_IN: ‘1h’,
+            BCRYPT_SALT_ROUNDS: 10
+        }
+   }]
+};
 ```
 
 ---
