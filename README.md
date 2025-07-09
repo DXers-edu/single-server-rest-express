@@ -58,9 +58,9 @@ module.exports = {
         watch: 'single-server-rest-express',
         env: {
             PORT: 4000,
-            MONGO_URI: ‘mongodb://prd_user:StrongP!ssw0rd@localhost:27017/single_server?authSource=single_server’,
-            JWT_SECRET: ‘qwertyuioplkjhgfdsazxcvbnm1234567890’,
-            JWT_EXPIRES_IN: ‘1h’,
+            MONGO_URI: 'mongodb://prd_user:StrongP!ssw0rd@localhost:27017/single_server?authSource=single_server',
+            JWT_SECRET: 'qwertyuioplkjhgfdsazxcvbnm1234567890',
+            JWT_EXPIRES_IN: '1h',
             BCRYPT_SALT_ROUNDS: 10
         }
    }]
