@@ -40,5 +40,5 @@ exports.signIn = async (userEmail, userPassword) => {
         expiresIn: process.env.JWT_EXPIRES_IN,
     });
 
-    return { accessToken, expiration: +process.env.JWT_EXPIRES_IN };
+    return { code: 'SU', message: 'Success.', accessToken, expiration: 60 * 60 };
 };
